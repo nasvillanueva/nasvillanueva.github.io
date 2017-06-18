@@ -38,7 +38,7 @@ When I'm not working [or ricing] I usually play computer games, play with my cat
 - Vas Bismark { River's Journey }
 - Edgar Allan Poe
 
-### `echo "contact / social"`
+### `$ echo "contact / social"`
 
 - `mail`: [nasvillanuevait@gmail.com](mailto:nasvillanuevait@gmail.com)
 - `github`: [nasvillanueva](https://github.com/nasvillanueva)
