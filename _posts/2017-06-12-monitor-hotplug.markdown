@@ -14,6 +14,8 @@ just wasn't motivated enough to make it work.
 After listening to the [Nixers][nixers] [Podcast][nixers-podcasts], for
 some unknown reason, I was motivated to write one that actually works.
 
+<!--more-->
+
 Here's my `/etc/udev/rules.d/99-monitor-hotplug.rules`:
 
 {% highlight bash %}
