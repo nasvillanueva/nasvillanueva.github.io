@@ -10,7 +10,7 @@ share: false
 
 I'm a <span id="age"></span> old coder living in the Philippines. I graduated in 2015 at the [Pamantasan ng Lungsod ng Valenzuela][plv], but I started working in 2014 as a part-time Systems Developer. I currently work for [Exist Software Labs, Inc.][exist] as an  [~~Full Stack~~][commitstrip-fullstack] all-around Software Engineer. I'm a [Manjaro Linux][manjaro] user and an amateur "[_ricer_][ricing]" who takes inspirations from [z3bra][z3bra], [dkeg][dkeg], [tudurom][tudurom], [venam][venam], [xero][xero], and other people from [nixers][nixers] and [/r/unixporn][unixporn]. 
 
-When I'm not working [or ricing] I usually play computer games, play with my cats, learn japanese, read books, read about mythologies/legends, browse Quora, play some instruments, and do some archery.
+When I'm not working [or ricing], I usually play computer games, play with my cats, learn japanese, read books, read about mythologies/legends, browse Quora, play some instruments, and do some archery.
 
 <p id="tldr">I <3 code, ricing, games, learning, cats, books, archery, music, mythologies/legends, and brocolli.</p>
 
