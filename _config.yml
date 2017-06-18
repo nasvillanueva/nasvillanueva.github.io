@@ -30,7 +30,6 @@ owner:
   name:           Nas Villanueva
   site:           https://nasvillanueva.github.io
   avatar:         images/avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
   email:          nasvillanuevait@gmail.com
   # Twitter nick for use in Twitter cards and follow button.
   twitter: NazIsEvil # if no twitter in this config, the twitter follow button will be removed
@@ -93,5 +92,7 @@ titlecase: false
 
 include: [".htaccess"]
 exclude: ["demo/*", "lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
-gems: [jekyll-paginate,jekyll-timeago]
+gems:
+    - jekyll-paginate
+    - jekyll-timeago
 theme: neo-hpstr-jekyll-theme
