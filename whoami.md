@@ -44,8 +44,8 @@ When I'm not working [or ricing], I usually play computer games, play with my ca
 - `github`: [nasvillanueva](https://github.com/nasvillanueva)
 - `linkedin`: [nasvillanueva](https://www.linkedin.com/in/nasvillanueva/)
 - `fb`: [nasvillaneva](https://fb.com/nasvillanueva)
-- `twitter`: [NazIsEvil](https://twitter.com/NazIsEvil)
-- `ig`: [NazIsEvil](https://www.instagram.com/nazisevil/)
+- `twitter`: [nasvillanueva_](https://twitter.com/nasvillanueva_)
+- `ig`: [nasvillanueva](https://www.instagram.com/nasvillanueva/)
 
 
 

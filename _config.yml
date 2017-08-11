@@ -31,7 +31,7 @@ owner:
   avatar:         images/avatar.jpg
   email:          nasvillanuevait@gmail.com
   # Twitter nick for use in Twitter cards and follow button.
-  twitter: NazIsEvil # if no twitter in this config, the twitter follow button will be removed
+  twitter: nasvillanueva_  # if no twitter in this config, the twitter follow button will be removed
   # GitHub nick for use in follow button in author block.
   github: nasvillanueva
 
