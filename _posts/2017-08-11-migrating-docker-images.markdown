@@ -6,7 +6,7 @@ tags: [spring, microservices, scripts, docker, devops, registry]
 ---
 
 
-Do you run your own Docker Registry server ever got tired of tagging
+Do you run your own Docker Registry server? Ever got tired of tagging
 all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
 I came up with this script.
@@ -36,7 +36,7 @@ Some of the things you might ask me:
     is meant to be access via VPN)
 
 * **_"Why not use [Jenkins](jenkins) or some other in-premise CI/CD that
-  can automatically tag and push your images to you different
+  can automatically tag and push your images to your different
   envirnments?"_**     
   Actually, I'm not so sure because I've heard other companies use CI/CD
   from development -> production. Maybe the client doesn't want CI/CD in
@@ -46,8 +46,8 @@ Some of the things you might ask me:
 ### Problem
 
 It is a pain in the arse when you need to manually tag and push all your
-images from one registry to another, wheter it may come from your local
-machine or one of your registry servers
+images from one registry to another, whether it may come from your local
+machine or one of your registry servers.
 
 ### Solution
 
@@ -102,8 +102,8 @@ Tag `node` and `rabbitmq` tagged with `yourregistry.com` to `yourotherregistry.c
 
 
 So there you have it, my fancy transfer images script. I hope it will help
-some of you guys/gals that faces the same problem as I did. I'll write
-more scripts if I encounter more repetitive and/or tedious task.
+some of you guys/gals that face the same problem as I did. I'll write
+more scripts if I encounter more repetitive and/or tedious tasks.
 
 [docker]: https://www.docker.com/
 [spring]: https://spring.io/ 
