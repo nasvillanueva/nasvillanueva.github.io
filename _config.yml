@@ -1,0 +1,43 @@
+# files
+layouts_dir: ./_/layouts
+includes: ./_includes
+destination: ./_/site
+sass:
+  sass_dir: _/scss
+
+# Markdown
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: true
+  syntax_highlighter: coderay
+
+syntax_highlighter_opts:
+  line_numbers: nil
+  line_numbers_start: 1
+  tab_width: 4
+  bold_every: 10
+
+
+# Site settings
+permalink: /:title.html
+exclude: ["Makefile", "README.md", "_/Gemfile", "_/Gemfile.lock", ".idea"]
+
+# Site info
+meta:
+  title: Nas Villanueva
+  author: Nas Villanueva
+  name: Nas Villanueva
+  hostname: nasvillanueva.github.io
+
+analytics:
+  id: UA-100931151-1
+
+defaults:
+- scope:
+    path: ""
+  values:
+    layout: "post"
+    tags: []
