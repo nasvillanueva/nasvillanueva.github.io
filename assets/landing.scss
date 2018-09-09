@@ -67,10 +67,16 @@ a {
     }
   }
 
+  > .gap {
+    width: 25px;
+
+    @media (max-width: 890px) {
+      display: none;
+    }
+  }
+
   > .terminal-container {
-    width: 620px;
-    flex-shrink: 0;
-    margin-right: 25px;
+    flex-basis: 620px;
 
     > .terminal {
       padding: 5px;
@@ -108,7 +114,6 @@ a {
 
   > .browser-container {
     flex-grow: 1;
-    min-width: 400px;
 
     > .browser {
       padding: 5px;
@@ -132,10 +137,6 @@ a {
 
       a {
         text-decoration: none;
-      }
-
-      > .content {
-
       }
     }
   }
