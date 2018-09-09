@@ -13,12 +13,7 @@
 @import 'colors';
 
 html {
-  background: #191719; /* Old browsers */
-  background: -moz-linear-gradient(45deg, #191719 0%, #da7285 99%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #191719 0%, #da7285 99%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #191719 0%, #da7285 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#191719', endColorstr='#da7285', GradientType=1); /* IE6-9 fallback on horizontal gradient */
-  height: 100%;
+  background: $color14;
 }
 
 body {
@@ -37,6 +32,7 @@ a {
   .app {
     border-radius: 5px;
     margin-bottom: 25px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
 
     > .titlebar {
       border-radius: 5px 5px 0 0;
