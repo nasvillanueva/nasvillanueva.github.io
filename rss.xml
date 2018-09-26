@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Sep 2018 18:15:13 GMT</lastBuildDate><item><title><![CDATA[Migrating Docker Images]]></title><description><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Sep 2018 18:34:40 GMT</lastBuildDate><item><title><![CDATA[Migrating Docker Images]]></title><description><![CDATA[
 Do you run your own Docker Registry server? Ever got tired of tagging
 all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
@@ -9,6 +9,9 @@ all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
 I came up with this script.&lt;/p&gt;
 &lt;!--excerpt--&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Disclaimer: I was at a different company when I created this post.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3&gt;Context&lt;/h3&gt;
 &lt;p&gt;We’re developing an enterprise software for a client with a microservices
 architecture that utilizes &lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt; containers and &lt;a href=&quot;https://dcos.io/&quot;&gt;DC/OS&lt;/a&gt;
