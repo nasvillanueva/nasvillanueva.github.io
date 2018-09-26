@@ -1,7 +1,6 @@
 ---
 title: Monitor Hotplug for Linux
 date: '2017-06-12T15:05:00Z'
-path: '/monitor-hotplug'
 qiitaUrl: ''
 ---
 
