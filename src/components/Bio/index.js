@@ -50,31 +50,63 @@ class Index extends React.Component {
           </div>
 
           <div className={'sns'}>
-            <a href="mailto:hi@nasvillanueva.com" target={'_blank'}>
+            <a
+              href="mailto:hi@nasvillanueva.com"
+              target={'_blank'}
+              title={'Email'}
+            >
               <i className={'fa fa-envelope'} />
             </a>
-            <a href="https://github.com/nasvillanueva" target={'_blank'}>
+            <a
+              href="https://github.com/nasvillanueva"
+              target={'_blank'}
+              title={'GitHub'}
+            >
               <i className={'fa fa-github-square'} />
+            </a>
+            <a
+              href="https://qiita.com/nasvillanueva"
+              target={'_blank'}
+              title={'Qiita'}
+            >
+              <span className={'fa-stack sns-qiita'}>
+                <i className={'fa fa-square fa-stack-1x'} />
+                <i className={'fa fa-search fa-stack-1x fa-inverse fa-1x'} />
+              </span>
             </a>
             <a
               href="https://www.linkedin.com/in/nasvillanueva/"
               target={'_blank'}
+              title={'LinkedIn'}
             >
               <i className={'fa fa-linkedin-square'} />
             </a>
-            <a href="https://fb.com/nasvillanueva" target={'_blank'}>
+            <a
+              href="https://fb.com/nasvillanueva"
+              target={'_blank'}
+              title={'Facebook'}
+            >
               <i className={'fa fa-facebook-square'} />
             </a>
-            <a href="https://twitter.com/nasvillanueva_" target={'_blank'}>
+            <a
+              href="https://twitter.com/nasvillanueva_"
+              target={'_blank'}
+              title={'Twitter'}
+            >
               <i className={'fa fa-twitter-square'} />
             </a>
             <a
               href="https://www.instagram.com/nasvillanueva/"
               target={'_blank'}
+              title={'Instagram'}
             >
               <i className={'fa fa-instagram'} />
             </a>
-            <a href="https://soundcloud.com/nasvillanueva" target={'_blank'}>
+            <a
+              href="https://soundcloud.com/nasvillanueva"
+              target={'_blank'}
+              title={'Soundcloud'}
+            >
               <i className={'fa fa-soundcloud'} />
             </a>
           </div>
