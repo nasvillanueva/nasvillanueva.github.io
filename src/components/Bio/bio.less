@@ -1,0 +1,27 @@
+.bio-container {
+  display: flex;
+
+  > .spinning-logo {
+    animation: spin 5s infinite ease-in-out both;
+
+    @keyframes spin {
+      0% {
+        transform: perspective(120) rotateY(0deg);
+      }
+      100% {
+        transform: perspective(120) rotateY(360deg);
+      }
+    }
+  }
+
+  > .bio {
+    > .sns {
+      display: flex;
+      justify-content: flex-end;
+
+      > :not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+  }
+}
