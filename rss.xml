@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Sep 2018 18:34:40 GMT</lastBuildDate><item><title><![CDATA[Migrating Docker Images]]></title><description><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Sep 2018 18:43:55 GMT</lastBuildDate><item><title><![CDATA[Migrating Docker Images]]></title><description><![CDATA[
 Do you run your own Docker Registry server? Ever got tired of tagging
 all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
 I came up with this script.
 
-]]></description><link>https://www.nasvillanueva.com/20170811-migrating-docker-images/</link><guid isPermaLink="false">https://www.nasvillanueva.com/20170811-migrating-docker-images/</guid><pubDate>Fri, 11 Aug 2017 12:55:00 GMT</pubDate><content:encoded>&lt;p&gt;Do you run your own Docker Registry server? Ever got tired of tagging
+]]></description><link>https://www.nasvillanueva.com/migrating-docker-images/</link><guid isPermaLink="false">https://www.nasvillanueva.com/migrating-docker-images/</guid><pubDate>Fri, 11 Aug 2017 12:55:00 GMT</pubDate><content:encoded>&lt;p&gt;Do you run your own Docker Registry server? Ever got tired of tagging
 all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
 I came up with this script.&lt;/p&gt;
@@ -87,7 +87,7 @@ this script so many times before, but failed to make it work. I'm not sure
 if it's because my setup at the time supported it very well, or if I
 just wasn't motivated enough to make it work.
 
-]]></description><link>https://www.nasvillanueva.com/20170612-monitor-hotplug/</link><guid isPermaLink="false">https://www.nasvillanueva.com/20170612-monitor-hotplug/</guid><pubDate>Mon, 12 Jun 2017 15:05:00 GMT</pubDate><content:encoded>&lt;p&gt;I finally managed to write a &lt;code class=&quot;language-text&quot;&gt;udev&lt;/code&gt; rule that executes my &lt;code class=&quot;language-text&quot;&gt;xrandr&lt;/code&gt; script
+]]></description><link>https://www.nasvillanueva.com/monitor-hotplug/</link><guid isPermaLink="false">https://www.nasvillanueva.com/monitor-hotplug/</guid><pubDate>Mon, 12 Jun 2017 15:05:00 GMT</pubDate><content:encoded>&lt;p&gt;I finally managed to write a &lt;code class=&quot;language-text&quot;&gt;udev&lt;/code&gt; rule that executes my &lt;code class=&quot;language-text&quot;&gt;xrandr&lt;/code&gt; script
 when plugging an external monitor for my work laptop. I’ve tried to write
 this script so many times before, but failed to make it work. I’m not sure
 if it’s because my setup at the time supported it very well, or if I
