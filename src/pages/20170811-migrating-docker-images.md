@@ -11,6 +11,8 @@ I came up with this script.
 
 <!--excerpt-->
 
+> Disclaimer: I was at a different company when I created this post.
+
 ### Context
 
 We're developing an enterprise software for a client with a microservices
