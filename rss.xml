@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Sep 2018 18:43:55 GMT</lastBuildDate><item><title><![CDATA[Migrating Docker Images]]></title><description><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 15 Oct 2018 15:08:09 GMT</lastBuildDate><item><title><![CDATA[gifify.sh — Convert Videos to GIFs]]></title><description><![CDATA[
+At work, we use a service called Assembla, a service like Github. Sometimes, to make our tickets more understandable, we include screenshots or screencasts. But the problem is, on Assembla, they don't have an embedded video player
+for the screencast we upload, even when it's in a web compatible format. So I created this script.
+
+]]></description><link>https://www.nasvillanueva.com/gifify/</link><guid isPermaLink="false">https://www.nasvillanueva.com/gifify/</guid><pubDate>Mon, 15 Oct 2018 06:34:39 GMT</pubDate><content:encoded>&lt;p&gt;At work, we use a service called Assembla, a service like Github. Sometimes, to make our tickets more understandable, we include screenshots or screencasts. But the problem is, on Assembla, they don’t have an embedded video player
+for the screencast we upload, even when it’s in a web compatible format. So I created this script.&lt;/p&gt;
+&lt;!--excerpt--&gt;
+&lt;h1&gt;The Script (not the band)&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;gifify.sh&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber 0&quot; class=&quot;language-bash line-numbers&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+TEMP_DIR&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;mktemp -d $TMPDIR/gifify.$RANDOM&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+
+ffmpeg -i &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt; -r 5 &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$TEMP_DIR&lt;/span&gt;/frames-%03d.jpg&quot;&lt;/span&gt;
+
+FILENAME&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;basename&lt;/span&gt; $1&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+
+convert -delay 20 -loop 0 &lt;span class=&quot;token variable&quot;&gt;$TEMP_DIR&lt;/span&gt;/frames-*.jpg &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${FILENAME%%.*}&lt;/span&gt;.gif&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; -rf &lt;span class=&quot;token variable&quot;&gt;$TEMP_DIR&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Before being able to run this script, you’d have to have these tools installed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.ffmpeg.org&quot;&gt;ffmpeg&lt;/a&gt; - for slicing your video into images; and&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.imagemagick.org&quot;&gt;ImageMagick&lt;/a&gt; - for combining your slices of images into a GIF.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Let’s dissect &lt;code class=&quot;language-text&quot;&gt;line 5&lt;/code&gt;&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber 0&quot; class=&quot;language-bash line-numbers&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ffmpeg                      &lt;span class=&quot;token comment&quot;&gt;# Call ffmpeg.&lt;/span&gt;
+    -i &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;                   &lt;span class=&quot;token comment&quot;&gt;# Pass script first argumen as input file.&lt;/span&gt;
+    -r 5                    &lt;span class=&quot;token comment&quot;&gt;# Set framerate to 5.&lt;/span&gt;
+&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$TEMP_DIR&lt;/span&gt;/frames-%03d.jpg&quot;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;# Tell ffmpeg where to put the slices,&lt;/span&gt;
+                            &lt;span class=&quot;token comment&quot;&gt;# with a filename template.&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;And &lt;code class=&quot;language-text&quot;&gt;line 9&lt;/code&gt;&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber 0&quot; class=&quot;language-bash line-numbers&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;convert                     &lt;span class=&quot;token comment&quot;&gt;# Call ImageMagick convert.&lt;/span&gt;
+    -delay 20               &lt;span class=&quot;token comment&quot;&gt;# Delay before the next image shows&lt;/span&gt;
+    -loop 0                 &lt;span class=&quot;token comment&quot;&gt;# Set loop to infinite&lt;/span&gt;
+    &lt;span class=&quot;token variable&quot;&gt;$TEMP_DIR&lt;/span&gt;/frames-*.jpg  &lt;span class=&quot;token comment&quot;&gt;# Tell ImageMagick where the slices are.&lt;/span&gt;
+    &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${FILENAME%%.*}&lt;/span&gt;.gif&quot;&lt;/span&gt;   &lt;span class=&quot;token comment&quot;&gt;# Tell ImageMagick the output filename,&lt;/span&gt;
+                            &lt;span class=&quot;token comment&quot;&gt;# replacing the original extension to .gif&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I am, by no means, an advanced user of ffmpeg nor ImageMagick, that’s why I only used minimal options for each tool.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;Running the script&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;gifify.sh ./sample.mov&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will produce a GIF file with the same filename as the input.&lt;/p&gt;
+&lt;h1&gt;Demo&lt;/h1&gt;
+&lt;p&gt;Here’s a screencast I recorded using Quicktime. &lt;code class=&quot;language-text&quot;&gt;sample.mov&lt;/code&gt;&lt;/p&gt;
+&lt;video width=&quot;100%&quot; height=&quot;auto&quot; controls&gt;
+    &lt;source src=&quot;/sample-49d931fb81bdacb2c6e2dd5744e5f3ea.mov&quot;&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+&lt;br&gt;
+&lt;p&gt;Here’s a &lt;em&gt;gifified&lt;/em&gt; file. &lt;code class=&quot;language-text&quot;&gt;sample.gif&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/sample-9ffcc51955357da363364e414f6f112c.gif&quot; alt=&quot;sample.gif&quot;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Now, it’s easier to embed a screencast, albeit fake, on Assembla (or even Github, GitLab, etc.)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Migrating Docker Images]]></title><description><![CDATA[
 Do you run your own Docker Registry server? Ever got tired of tagging
 all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
@@ -52,17 +107,17 @@ machine or one of your registry servers.&lt;/p&gt;
 &lt;p&gt;I’ve written a &lt;a href=&quot;https://github.com/nasvillanueva/scripts/blob/master/transfer_images.sh&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;transfer_images.sh&lt;/code&gt;&lt;/a&gt; found on my
 &lt;a href=&quot;https://github.com/nasvillanueva/scripts&quot;&gt;scripts repo&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Usage:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt; ./transfer_images.sh [-s source] -d destination -m matcher[,matcher2,matcher3...] [-p]
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt; ./transfer_images.sh &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;-s source&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; -d destination -m matcher&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;,matcher2,matcher3&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;-p&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
  where:
     -h print usage
-    -s source registry (optional)
+    -s &lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; registry &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;optional&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
         example: registry.hub.docker.com
-    -d destination registry (required)
+    -d destination registry &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;required&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
         example: registry.mydomain.com
-    -m matchers (required)
+    -m matchers &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;required&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
         all the images that will be tagged with the destination
         example nodejs,jenkins,chronos
-    -p push images (optional)
+    -p push images &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;optional&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
         push all tagged images&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Examples&lt;/h3&gt;
 &lt;p&gt;Given these docker images in your local repositories:&lt;/p&gt;
