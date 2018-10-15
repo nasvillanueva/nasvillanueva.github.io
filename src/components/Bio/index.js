@@ -42,9 +42,9 @@ class Index extends React.Component {
               cool stuff{' '}
             </a>{' '}
             at
-            <a href="https://infoteria.com" target={'_blank'}>
+            <a href="https://asteria.com" target={'_blank'}>
               {' '}
-              Infoteria{' '}
+              Asteria{' '}
             </a>{' '}
             as a Software Developer.
           </div>
