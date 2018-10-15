@@ -1,1 +1,3 @@
-require("prismjs/themes/prism-tomorrow.css")
+require('prismjs/themes/prism-tomorrow.css')
+require('prismjs/plugins/line-numbers/prism-line-numbers.css')
+require('./src/assets/line-number-ext.less')
