@@ -69,7 +69,7 @@ This will produce a GIF file with the same filename as the input.
 Here's a screencast I recorded using Quicktime. `sample.mov`
 
 <video width="100%" height="auto" controls>
-    <source src="sample.mov">
+    <source src="/assets/gifify/sample.mov">
     Your browser does not support the video tag.
 </video>
 
@@ -78,7 +78,7 @@ Here's a screencast I recorded using Quicktime. `sample.mov`
 
 Here's a _gifified_ file. `sample.gif`
 
-![sample.gif](sample.gif)
+![sample.gif][]
 
 
 <br>
@@ -89,3 +89,4 @@ Now, it's easier to embed a screencast, albeit fake, on Assembla (or even Github
 
 [ImageMagick]: https://www.imagemagick.org
 [ffmpeg]: https://www.ffmpeg.org
+[sample.gif]: /assets/gifify/sample.gif
