@@ -2,29 +2,52 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
+import defaultTo from 'lodash/defaultTo'
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import QiitaLink from '../components/QiitaLink'
-import Title from '../components/Title'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const postTitle = post.frontmatter.title;
+    const siteTitle = defaultTo(postTitle, get(this.props, 'data.site.siteMetadata.title'));
     const siteDescription = post.excerpt
+    const twitterUsername = get(this.props, 'data.site.siteMetadata.twitterUsername')
     const { previous, next } = this.props.pageContext
     const qiitaUrl = post.frontmatter.qiitaUrl
-
+    const meta = [
+      {
+        name: 'description',
+        content: siteDescription
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary',
+      },
+      {
+        name: 'twitter:author',
+        content: twitterUsername,
+      },
+      {
+        name: 'twitter:title',
+        content: post.frontmatter.title
+      },
+      {
+        name: 'twitter:description',
+        content: siteDescription
+      }
+    ];
     return (
       <Layout location={this.props.location} className={'blog-post'}>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
+          meta={meta}
+          title={siteTitle}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <h1>{postTitle}</h1>
 
         <div
           className="blog-post-meta"
@@ -86,6 +109,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        twitterUsername
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
