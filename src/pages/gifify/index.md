@@ -46,8 +46,8 @@ ffmpeg                      # Call ffmpeg.
 
 ```bash{numberLines: true}
 convert                     # Call ImageMagick convert.
-    -delay 20               # Delay before the next image shows
-    -loop 0                 # Set loop to infinite
+    -delay 20               # Delay before the next image shows.
+    -loop 0                 # Set loop to infinite.
     $TEMP_DIR/frames-*.jpg  # Tell ImageMagick where the slices are.
     "${FILENAME%%.*}.gif"   # Tell ImageMagick the output filename,
                             # replacing the original extension to .gif
