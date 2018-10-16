@@ -1,7 +1,7 @@
 ---
 title: gifify.sh — Convert Videos to GIFs
 date: '2018-10-15T06:34:39Z'
-qiitaUrl: ''
+qiitaUrl: 'https://qiita.com/nasvillanueva/items/29d0b4e9b2f0223e3d6c'
 ---
 
 At work, we use a service called Assembla, a service like Github. Sometimes, to make our tickets more understandable, we include screenshots or screencasts. But the problem is, on Assembla, they don't have an embedded video player
