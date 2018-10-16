@@ -9,7 +9,6 @@ when plugging an external monitor for my work laptop. I've tried to write
 this script so many times before, but failed to make it work. I'm not sure
 if it's because my setup at the time supported it very well, or if I
 just wasn't motivated enough to make it work.
-
 <!--excerpt-->
 
 After listening to the [Nixers][nixers] [Podcast][nixers-podcasts], for

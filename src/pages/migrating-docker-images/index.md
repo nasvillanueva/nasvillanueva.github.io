@@ -8,7 +8,6 @@ Do you run your own Docker Registry server? Ever got tired of tagging
 all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
 I came up with this script.
-
 <!--excerpt-->
 
 > Disclaimer: I was at a different company when I created this post.

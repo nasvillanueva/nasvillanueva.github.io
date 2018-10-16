@@ -6,7 +6,6 @@ qiitaUrl: ''
 
 At work, we use a service called Assembla, a service like Github. Sometimes, to make our tickets more understandable, we include screenshots or screencasts. But the problem is, on Assembla, they don't have an embedded video player
 for the screencast we upload, even when it's in a web compatible format. So I created this script.
-
 <!--excerpt-->
 
 # The Script (not the band)
