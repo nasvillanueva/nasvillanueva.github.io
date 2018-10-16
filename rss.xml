@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 16 Oct 2018 02:36:14 GMT</lastBuildDate><item><title><![CDATA[gifify.sh — Convert Videos to GIFs]]></title><description><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 16 Oct 2018 02:38:37 GMT</lastBuildDate><item><title><![CDATA[gifify.sh — Convert Videos to GIFs]]></title><description><![CDATA[
 At work, we use a service called Assembla, a service like Github. Sometimes, to make our tickets more understandable, we include screenshots or screencasts. But the problem is, on Assembla, they don't have an embedded video player
 for the screencast we upload, even when it's in a web compatible format. So I created this script.
 
@@ -53,7 +53,7 @@ convert -delay 20 -loop 0 &lt;span class=&quot;token variable&quot;&gt;$TEMP_DIR
 &lt;p&gt;Here’s a &lt;em&gt;gifified&lt;/em&gt; file. &lt;code class=&quot;language-text&quot;&gt;sample.gif&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/sample-9ffcc51955357da363364e414f6f112c.gif&quot; alt=&quot;sample.gif&quot;&gt;&lt;/p&gt;
 &lt;br&gt;
-&lt;p&gt;Now, it’s easier to embed a screencast, albeit fake, on Assembla (or even Github, GitLab, etc.)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Migrating Docker Images]]></title><description><![CDATA[
+&lt;p&gt;Now, it’s easier to embed a screencastª, albeit fake, on Assembla (or even Github, GitLab, etc.)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Migrating Docker Images]]></title><description><![CDATA[
 Do you run your own Docker Registry server? Ever got tired of tagging
 all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
