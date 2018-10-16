@@ -12,16 +12,23 @@ import { rhythm, scale } from '../utils/typography'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const postTitle = post.frontmatter.title;
-    const siteTitle = defaultTo(postTitle, get(this.props, 'data.site.siteMetadata.title'));
+    const postTitle = post.frontmatter.title
+    const siteTitle = defaultTo(
+      postTitle,
+      get(this.props, 'data.site.siteMetadata.title')
+    )
     const siteDescription = post.excerpt
-    const twitterUsername = get(this.props, 'data.site.siteMetadata.twitterUsername')
+    const siteUrl = get(this.props, 'data.site.sitemetadata.siteUrl')
+    const twitterUsername = get(
+      this.props,
+      'data.site.siteMetadata.twitterUsername'
+    )
     const { previous, next } = this.props.pageContext
     const qiitaUrl = post.frontmatter.qiitaUrl
     const meta = [
       {
         name: 'description',
-        content: siteDescription
+        content: siteDescription,
       },
       {
         name: 'twitter:card',
@@ -33,20 +40,20 @@ class BlogPostTemplate extends React.Component {
       },
       {
         name: 'twitter:title',
-        content: post.frontmatter.title
+        content: post.frontmatter.title,
       },
       {
         name: 'twitter:description',
-        content: siteDescription
-      }
-    ];
+        content: siteDescription,
+      },
+      {
+        name: 'twitter:image',
+        content: `${siteUrl}/logo.png`,
+      },
+    ]
     return (
       <Layout location={this.props.location} className={'blog-post'}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={meta}
-          title={siteTitle}
-        />
+        <Helmet htmlAttributes={{ lang: 'en' }} meta={meta} title={siteTitle} />
         <h1>{postTitle}</h1>
 
         <div
@@ -110,6 +117,7 @@ export const pageQuery = graphql`
         title
         author
         twitterUsername
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
