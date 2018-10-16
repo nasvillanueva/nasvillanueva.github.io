@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 16 Oct 2018 02:38:37 GMT</lastBuildDate><item><title><![CDATA[gifify.sh — Convert Videos to GIFs]]></title><description><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[nandemonas]]></title><description><![CDATA[Personal blog of Nas Villanueva]]></description><link>https://www.nasvillanueva.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 16 Oct 2018 03:07:07 GMT</lastBuildDate><item><title><![CDATA[gifify.sh — Convert Videos to GIFs]]></title><description><![CDATA[
 At work, we use a service called Assembla, a service like Github. Sometimes, to make our tickets more understandable, we include screenshots or screencasts. But the problem is, on Assembla, they don't have an embedded video player
 for the screencast we upload, even when it's in a web compatible format. So I created this script.
-
 ]]></description><link>https://www.nasvillanueva.com/gifify/</link><guid isPermaLink="false">https://www.nasvillanueva.com/gifify/</guid><pubDate>Mon, 15 Oct 2018 06:34:39 GMT</pubDate><content:encoded>&lt;p&gt;At work, we use a service called Assembla, a service like Github. Sometimes, to make our tickets more understandable, we include screenshots or screencasts. But the problem is, on Assembla, they don’t have an embedded video player
 for the screencast we upload, even when it’s in a web compatible format. So I created this script.&lt;/p&gt;
 &lt;!--excerpt--&gt;
@@ -58,7 +57,6 @@ Do you run your own Docker Registry server? Ever got tired of tagging
 all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
 I came up with this script.
-
 ]]></description><link>https://www.nasvillanueva.com/migrating-docker-images/</link><guid isPermaLink="false">https://www.nasvillanueva.com/migrating-docker-images/</guid><pubDate>Fri, 11 Aug 2017 12:55:00 GMT</pubDate><content:encoded>&lt;p&gt;Do you run your own Docker Registry server? Ever got tired of tagging
 all your images with the registry URL and pushing them one by one? Well,
 we do and it is very exhausting when you keep doing it again and again. So
@@ -107,17 +105,17 @@ machine or one of your registry servers.&lt;/p&gt;
 &lt;p&gt;I’ve written a &lt;a href=&quot;https://github.com/nasvillanueva/scripts/blob/master/transfer_images.sh&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;transfer_images.sh&lt;/code&gt;&lt;/a&gt; found on my
 &lt;a href=&quot;https://github.com/nasvillanueva/scripts&quot;&gt;scripts repo&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Usage:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt; ./transfer_images.sh &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;-s source&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; -d destination -m matcher&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;,matcher2,matcher3&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;-p&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt; ./transfer_images.sh [-s source] -d destination -m matcher[,matcher2,matcher3...] [-p]
  where:
     -h print usage
-    -s &lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; registry &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;optional&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    -s source registry (optional)
         example: registry.hub.docker.com
-    -d destination registry &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;required&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    -d destination registry (required)
         example: registry.mydomain.com
-    -m matchers &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;required&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    -m matchers (required)
         all the images that will be tagged with the destination
         example nodejs,jenkins,chronos
-    -p push images &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;optional&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    -p push images (optional)
         push all tagged images&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;Examples&lt;/h3&gt;
 &lt;p&gt;Given these docker images in your local repositories:&lt;/p&gt;
@@ -141,7 +139,6 @@ when plugging an external monitor for my work laptop. I've tried to write
 this script so many times before, but failed to make it work. I'm not sure
 if it's because my setup at the time supported it very well, or if I
 just wasn't motivated enough to make it work.
-
 ]]></description><link>https://www.nasvillanueva.com/monitor-hotplug/</link><guid isPermaLink="false">https://www.nasvillanueva.com/monitor-hotplug/</guid><pubDate>Mon, 12 Jun 2017 15:05:00 GMT</pubDate><content:encoded>&lt;p&gt;I finally managed to write a &lt;code class=&quot;language-text&quot;&gt;udev&lt;/code&gt; rule that executes my &lt;code class=&quot;language-text&quot;&gt;xrandr&lt;/code&gt; script
 when plugging an external monitor for my work laptop. I’ve tried to write
 this script so many times before, but failed to make it work. I’m not sure
