@@ -18,7 +18,7 @@ class BlogPostTemplate extends React.Component {
       get(this.props, 'data.site.siteMetadata.title')
     )
     const siteDescription = post.excerpt
-    const siteUrl = get(this.props, 'data.site.sitemetadata.siteUrl')
+    const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
     const twitterUsername = get(
       this.props,
       'data.site.siteMetadata.twitterUsername'
