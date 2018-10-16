@@ -14,7 +14,7 @@ class QiitaLink extends React.Component {
 
     return (
       <Link to={url} className={'qiita-link'} style={style}>
-        日本語で (Qiita)
+        日本語訳 (Qiita)
       </Link>
     )
   }
