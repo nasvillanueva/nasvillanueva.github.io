@@ -6,9 +6,11 @@ qiitaUrl: ''
 
 At work, we use a service called Assembla, a service like Github. Sometimes, to make our tickets more understandable, we include screenshots or screencasts. But the problem is, on Assembla, they don't have an embedded video player
 for the screencast we upload, even when it's in a web compatible format. So I created this script.
+
 <!--excerpt-->
 
 # The Script (not the band)
+
 `gifify.sh`
 
 ```bash{numberLines: true}
@@ -26,9 +28,9 @@ rm -rf $TEMP_DIR
 ```
 
 Before being able to run this script, you'd have to have these tools installed:
+
 - [ffmpeg][] - for slicing your video into images; and
 - [ImageMagick][] - for combining your slices of images into a GIF.
-
 
 ### Let's dissect `line 5`
 
@@ -51,7 +53,6 @@ convert                     # Call ImageMagick convert.
                             # replacing the original extension to .gif
 ```
 
-
 <br>
 
 > I am, by no means, an advanced user of ffmpeg nor ImageMagick, that's why I only used minimal options for each tool.
@@ -64,7 +65,6 @@ This will produce a GIF file with the same filename as the input.
 
 # Demo
 
-
 Here's a screencast I recorded using Quicktime. `sample.mov`
 
 <video width="100%" height="auto" controls>
@@ -72,21 +72,17 @@ Here's a screencast I recorded using Quicktime. `sample.mov`
     Your browser does not support the video tag.
 </video>
 
-
 <br>
 
 Here's a _gifified_ file. `sample.gif`
 
 ![sample.gif][]
 
-
 <br>
-
 
 Now, it's easier to embed a screencastª, albeit fake, on Assembla (or even Github, GitLab, etc.)
 
-
-[ImageMagick]: https://www.imagemagick.org
+[imagemagick]: https://www.imagemagick.org
 [ffmpeg]: https://www.ffmpeg.org
 [sample.gif]: ./sample.gif
 [sample.mov]: ./sample.mov
