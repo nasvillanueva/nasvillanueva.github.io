@@ -96,7 +96,7 @@ class Index extends React.Component {
               <i className={'fa fa-twitter-square'} />
             </a>
             <a
-              href="https://www.instagram.com/nasvillanueva/"
+              href="https://www.instagram.com/nandemonas/"
               target={'_blank'}
               title={'Instagram'}
             >
