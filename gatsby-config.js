@@ -4,7 +4,8 @@ module.exports = {
     author: 'Nas Villanueva',
     description: 'Personal blog of Nas Villanueva',
     siteUrl: 'https://www.nasvillanueva.com',
-    twitterUsername: '@nasvillanueva_'
+    twitterUsername: '@nasvillanueva_',
+    fbAppId: '2279507988981942'
   },
   pathPrefix: '/',
   plugins: [

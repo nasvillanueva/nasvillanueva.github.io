@@ -19,12 +19,15 @@ class BlogPostTemplate extends React.Component {
     )
     const siteDescription = post.excerpt
     const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
+    const fbAppId = get(this.props, 'data.site.siteMetadata.fbAppId')
     const twitterUsername = get(
       this.props,
       'data.site.siteMetadata.twitterUsername'
     )
     const { previous, next } = this.props.pageContext
     const qiitaUrl = post.frontmatter.qiitaUrl
+    const title = post.frontmatter.title
+    const imageUrl = `${siteUrl}/logo.png`
     const meta = [
       {
         name: 'description',
@@ -40,7 +43,7 @@ class BlogPostTemplate extends React.Component {
       },
       {
         name: 'twitter:title',
-        content: post.frontmatter.title,
+        content: title,
       },
       {
         name: 'twitter:description',
@@ -48,8 +51,28 @@ class BlogPostTemplate extends React.Component {
       },
       {
         name: 'twitter:image',
-        content: `${siteUrl}/logo.png`,
+        content: imageUrl,
       },
+      {
+        property: 'fb:app_id',
+        contentL: fbAppId
+      },
+      {
+        property: 'og:title',
+        content: title
+      },
+      {
+        property: 'og:image',
+        content: imageUrl
+      },
+      {
+        property: 'og:description',
+        content: siteDescription
+      },
+      {
+        property: 'og:type',
+        content: 'article'
+      }
     ]
     return (
       <Layout location={this.props.location} className={'blog-post'}>
