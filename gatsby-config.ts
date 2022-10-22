@@ -24,6 +24,7 @@ const config: GatsbyConfig = {
         },
       },
     },
+    "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
