@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunknasvillanueva_github_io=self.webpackChunknasvillanueva_github_io||[]).push([[691],{7200:function(e,n,t){t.r(n),t.d(n,{Head:function(){return f},default:function(){return c}});var u=t(7294),a=t(4222),r=t(7607),i=t(1082),l=t(9229);function c(){if((0,l.j)())return(0,i.navigate)("/dev"),u.createElement(a.Z,null)}var f=function(e){return u.createElement(r.Z,{headProps:e})}}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-5b358dcdc24f0b3d3112.js.map
