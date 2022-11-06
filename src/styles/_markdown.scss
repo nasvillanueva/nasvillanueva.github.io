@@ -1,0 +1,57 @@
+.markdown {
+  h1, h2 {
+    @apply text-xl my-6 font-semibold;
+  }
+
+  h3, h4, h5, h6 {
+    @apply text-lg my-3 font-semibold;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  ul, ol {
+    @apply mb-4 ml-8;
+  }
+
+  li {
+    > p,
+    > ul,
+    > ol {
+      @apply mb-0;
+    }
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  blockquote {
+    @apply p-2 mx-6 bg-gray-100 mb-4 border-l-4 border-gray-400 italic;
+
+    > p {
+      @apply mb-0;
+    }
+  }
+
+  table {
+    @apply mb-6;
+
+    td, th {
+      @apply px-2 py-1 border border-gray-400;
+    }
+
+    tr:nth-child(odd) {
+      @apply bg-gray-100;
+    }
+  }
+
+  :not(pre) > code.language-text {
+    white-space: pre-line;
+  }
+}

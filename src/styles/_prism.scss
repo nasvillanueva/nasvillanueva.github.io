@@ -1,0 +1,15 @@
+pre[class*="language-"] {
+  padding: 0.2rem 0;
+  border-radius: 0;
+}
+
+.line-numbers {
+  .line-numbers-rows {
+    padding: 0.2rem 0 0.2rem 0.6rem;
+  }
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.15rem;
+}

@@ -2,8 +2,9 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `nasvillanueva.github.io`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: "nandemonas",
+    author: "Nas Villanueva",
+    description: "Personal website of Nas Villanueva",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -26,7 +27,31 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
-    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/icon.png",
+      },
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        footnotes: true,
+        gfm: true,
+        excerpt_separator: "<!--excerpt-->",
+        plugins: [
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              showLineNumbers: true,
+            },
+          },
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants",
+          "gatsby-remark-reading-time",
+        ],
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -44,6 +69,14 @@ const config: GatsbyConfig = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blogPosts",
+        path: "./src/posts/",
+      },
+      __key: "blogPosts",
     },
   ],
 };

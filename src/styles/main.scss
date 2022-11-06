@@ -1,3 +1,83 @@
 @tailwind base;
 @tailwind components;
+@tailwind forms;
 @tailwind utilities;
+@tailwind variants;
+
+@import "./markdown";
+@import "./prism";
+
+html {
+  background-color: #ffffff;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu,Helvetica Neue, sans-serif,Apple Color Emoji,Segoe UI Emoji, Segoe UI Symbol;
+  color: rgb(39, 39, 42); // text-zinc-800
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+.primary-nav {
+  > a {
+    &::before {
+      // Hack to prevent UI shift due to font-weight
+      display: block;
+      content: attr(data-nav-label);
+      font-weight: 700;
+      overflow: hidden;
+      visibility: hidden;
+      height: 0;
+    }
+  }
+}
+
+a:not(.nav-link):not(.text-current):not(.tag):not(.brand-link) {
+  @apply text-nxs-red;
+  @apply transition-[color];
+  @apply ease-in-out;
+
+  &:hover {
+    @apply text-nxs-blue;
+
+    &:not(.no-underline) {
+      @apply underline;
+    }
+  }
+}
+
+.tags {
+  @apply flex flex-wrap;
+
+  > .tag {
+    @apply px-1 py-0.5 bg-zinc-100 text-[0.7rem] inline-block text-zinc-400 rounded-sm;
+
+    &:not(:last-child) {
+      @apply mr-1;
+    }
+  }
+}
+
+select {
+  @apply pl-2 py-1 rounded-md;
+  outline: none !important;
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    @apply border-nxs-blue/50;
+  }
+}
+
+.separator {
+  @apply border-b-[2px] w-1/4;
+}
