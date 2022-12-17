@@ -1,8 +1,8 @@
 import * as React from "react";
 import { graphql, HeadFC } from "gatsby";
-import DevLayout from "@components/DevLayout";
-import HeadComponent from "@components/Head";
-import type { Post, Tag } from "@@types/dev-layout";
+import DevLayout from "@/components/DevLayout";
+import HeadComponent from "@/components/Head";
+import type { Post, Tag } from "@/types/dev";
 
 export default function Tagged({ data: { tags, allMarkdownRemark: { nodes: posts } }, pageContext: { currentTag } }: {
   data: {
@@ -39,12 +39,12 @@ export const pageQuery = graphql`
       }
     }
     tags: allMarkdownRemark {
-      group(field: frontmatter___tags) {
+      group(field: { frontmatter: { tags: SELECT }}) {
         tag: fieldValue
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { fields: { site: { eq: "dev" } }, frontmatter: { tags: { eq: $currentTag } } }
     ) {
       nodes {

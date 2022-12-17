@@ -3,11 +3,11 @@ import { StaticImage } from "gatsby-plugin-image";
 import { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import * as PropTypes from "prop-types";
-import { isBrowser } from "../utils";
+import { isBrowser } from "@/utils";
 
 const Header = ({ useOverlay = true }) => {
   if (!isBrowser()) {
-    return;
+    return <div></div>;
   }
 
   const [isTopPosition, setIsTopPosition] = useState(false);

@@ -1,4 +1,3 @@
-import _ from "lodash";
 import path from "path";
 import type { CreatePagesArgs, CreateNodeArgs } from "gatsby";
 import { createFilePath } from "gatsby-source-filesystem";
@@ -26,27 +25,28 @@ export const createPages = async ({
       tags?: string[];
     };
   }
-  const result = await graphql<{
-    devTags: {
+
+  const devTags = await graphql<{
+    allMarkdownRemark: {
       group: {
         tag: string;
       }[];
-    };
-    dev: {
-      nodes: Post[];
-    };
-    photography: {
-      nodes: Post[];
-    };
+    }
   }>(`
-    {
-      devTags: allMarkdownRemark(filter: { fields: { site: { eq: "dev" } } }) {
-        group(field: frontmatter___tags) {
+      allMarkdownRemark(filter: { fields: { site: { eq: "dev" } } }) {
+        group(field: { frontmatter: { tags: SELECT } }) {
           tag: fieldValue
         }
       }
-      dev: allMarkdownRemark(
-        sort: { fields: frontmatter___date, order: DESC }
+  `);
+
+  const dev = await graphql<{
+    allMarkdownRemark: {
+      nodes: Post[];
+    }
+  }>(`
+      allMarkdownRemark(
+        sort: { frontmatter: { date: DESC } }
         filter: { fields: { site: { eq: "dev" } } }
       ) {
         nodes {
@@ -61,8 +61,15 @@ export const createPages = async ({
           }
         }
       }
-      photography: allMarkdownRemark(
-        sort: { fields: frontmatter___date, order: DESC }
+  `)
+
+  const photography = await graphql<{
+    allMarkdownRemark: {
+      nodes: Post[];
+    }
+  }>(`
+      allMarkdownRemark(
+        sort: { frontmatter: { date: DESC }  }
         filter: { fields: { site: { eq: "photography" } } }
       ) {
         nodes {
@@ -77,17 +84,7 @@ export const createPages = async ({
           }
         }
       }
-    }
-  `);
-
-  if (result.errors != null) {
-    reporter.panicOnBuild(
-      `There was an error loading blog posts`,
-      result.errors
-    );
-
-    return;
-  }
+  `)
 
   const createPages = (posts: Post[]) => {
     posts.forEach((post) => {
@@ -103,10 +100,10 @@ export const createPages = async ({
     });
   };
 
-  createPages(result.data?.dev.nodes ?? []);
-  createPages(result.data?.photography.nodes ?? []);
+  createPages(dev.data?.allMarkdownRemark.nodes ?? []);
+  createPages(photography.data?.allMarkdownRemark.nodes ?? []);
 
-  result.data?.devTags.group.forEach(({ tag }) => {
+  devTags.data?.allMarkdownRemark.group.forEach(({ tag }) => {
     createPage({
       path: `/dev/tagged/${tag}`,
       component: taggedTemplate,
@@ -153,8 +150,7 @@ export const onCreateWebpackConfig = ({ actions }: any) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        "@components": path.resolve(__dirname, "src/components/"),
-        "@@types": path.resolve(__dirname, "src/types/"),
+        "@": path.resolve(__dirname, "src/"),
       },
     },
   });

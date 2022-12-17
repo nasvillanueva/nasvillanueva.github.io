@@ -1,9 +1,9 @@
 import * as React from "react";
 import { graphql, HeadFC, navigate } from "gatsby";
-import Layout from "@components/Layout";
-import HeadComponent from "@components/Head";
+import Layout from "@/components/Layout";
+import HeadComponent from "@/components/Head";
 import { ImageDataLike } from "gatsby-plugin-image";
-import { isBrowser } from "../utils";
+import { isBrowser } from "@/utils";
 
 export default function PhotographyPage({ data: { allMarkdownRemark: { nodes: posts } } }: {
   data: {
@@ -41,7 +41,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC }}
       filter: { fields: { site: { eq: "photography" } } }
     ) {
       nodes {

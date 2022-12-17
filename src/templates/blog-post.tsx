@@ -1,9 +1,9 @@
 import * as React from "react";
 import { graphql, HeadFC } from "gatsby";
-import Layout from "@components/Layout";
-import HeadComponent from "@components/Head";
-import RelatedDevPosts from "@components/RelatedDevPosts";
-import type { Post } from "@@types/dev";
+import Layout from "@/components/Layout";
+import HeadComponent from "@/components/Head";
+import RelatedDevPosts from "@/components/RelatedDevPosts";
+import type { Post } from "@/types/dev";
 
 const BlogPost = ({
   data: {

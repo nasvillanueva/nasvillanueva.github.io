@@ -1,5 +1,5 @@
 import React from "react";
-import type { Post } from "@@types/dev";
+import type { Post } from "@/types/dev";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import * as PropTypes from "prop-types";
 import { Link } from "gatsby";

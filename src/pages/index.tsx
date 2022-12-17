@@ -1,6 +1,6 @@
 import * as React from "react"
-import Layout from "@components/Layout"
-import HeadComponent from "@components/Head"
+import Layout from "@/components/Layout"
+import HeadComponent from "@/components/Head"
 import { graphql, HeadFC, navigate } from "gatsby"
 import { isBrowser } from "../utils";
 

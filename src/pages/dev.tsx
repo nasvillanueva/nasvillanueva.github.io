@@ -1,8 +1,8 @@
 import * as React from "react";
 import { graphql, HeadFC } from "gatsby";
-import DevLayout from "@components/DevLayout";
-import HeadComponent from "@components/Head";
-import type { Post } from "@@types/dev";
+import DevLayout from "@/components/DevLayout";
+import HeadComponent from "@/components/Head";
+import type { Post } from "@/types/dev";
 
 export default function DevPage({ data: { tags, allMarkdownRemark: { nodes: posts } } }: {
   data: {
@@ -32,12 +32,12 @@ export const pageQuery = graphql`
       }
     }
     tags: allMarkdownRemark {
-      group(field: frontmatter___tags) {
+      group(field: { frontmatter: { tags: SELECT } }) {
         tag: fieldValue
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC }}
       filter: { fields: { site: { eq: "dev" } } }
     ) {
       nodes {

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { graphql, HeadFC, navigate } from "gatsby";
-import Layout from "@components/Layout";
-import HeadComponent from "@components/Head";
-import { isBrowser } from "../utils";
+import Layout from "@/components/Layout";
+import HeadComponent from "@/components/Head";
+import { isBrowser } from "@/utils";
 
 const About = () => {
   if (!isBrowser()) {

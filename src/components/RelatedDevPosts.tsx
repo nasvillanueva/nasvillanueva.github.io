@@ -1,6 +1,6 @@
 import * as React from "react";
-import type { Post } from "@@types/dev";
-import DevPost from "@components/DevPost";
+import type { Post } from "@/types/dev";
+import DevPost from "@/components/DevPost";
 import PropTypes from "prop-types";
 
 

@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
-import Layout from "@components/Layout";
+import Layout from "@/components/Layout";
 import { GatsbyImage, getImage, ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import { Link, navigate } from "gatsby";
-import type { Post } from "@@types/dev";
+import type { Post } from "@/types/dev";
 import DevPost from "./DevPost";
 
 const DevLayout = ({
