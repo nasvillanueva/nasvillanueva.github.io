@@ -1,10 +1,10 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 import { slugFromPath } from '$lib/utils/slugFromPath';
 import { buildFrontmatter } from '../../lib/utils/frontmatter';
 
 const MAX_POST_PER_PAGE = 10;
 
-export const load: PageServerLoad = async ({ url }) => {
+export const load: PageLoad = async ({ url }) => {
   const modules = import.meta.glob('/src/posts/tech/**/*.{md,svx,svelte.md}');
 
   const posts = await Promise.all(
