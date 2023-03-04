@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunknasvillanueva_github_io=self.webpackChunknasvillanueva_github_io||[]).push([[49],{2766:function(e,n,t){t.r(n),t.d(n,{Head:function(){return c}});var a=t(7294),u=t(1082),i=t(4222),r=t(7607),l=t(9229);n.default=function(){if((0,l.j)())return(0,u.navigate)("/dev"),a.createElement(i.Z,null)};var c=function(e){return a.createElement(r.Z,{headProps:e,pageTitle:"About"})}}}]);
-//# sourceMappingURL=component---src-pages-about-tsx-3602a7a187192459211c.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunknasvillanueva_github_io=self.webpackChunknasvillanueva_github_io||[]).push([[116],{534:function(e,n,a){a.r(n),a.d(n,{Head:function(){return c},default:function(){return o}});var t=a(7294),u=a(1082),r=a(4222),i=a(7607),l=a(9229);function o(e){e.data.allMarkdownRemark.nodes;if((0,l.j)())return(0,u.navigate)("/dev"),t.createElement(r.Z,null)}var c=function(e){return t.createElement(i.Z,{headProps:e,pageTitle:"Photography"})}}}]);
-//# sourceMappingURL=component---src-pages-photography-tsx-11bac4af367c3fae7338.js.map
