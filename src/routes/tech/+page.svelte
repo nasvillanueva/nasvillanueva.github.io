@@ -4,6 +4,7 @@
   import PageHead from '$lib/components/PageHead.svelte';
   import PostTags from '$lib/components/PostTags.svelte';
   import PostDate from '$lib/components/PostDate.svelte';
+  import type { ChangeEventHandler } from 'svelte/elements';
 
   let currentTag = $page.url.searchParams.get('tag') ?? '';
 
@@ -11,7 +12,13 @@
     void goto(`?${queryParams.toString()}`);
   };
 
-  const updateTagFilter = (tag: string) => {
+  const updateTagFilter: ChangeEventHandler<HTMLSelectElement> = (event) => {
+    if (event.currentTarget == null) {
+      return;
+    }
+
+    const tag = event.currentTarget.value;
+
     const updatedQueryParams = new URLSearchParams($page.url.searchParams.toString());
 
     if (tag === '') {
@@ -39,7 +46,7 @@
 
   <select
     class="mt-0 mb-5 border-0 border-b-2 border-zinc-500 text-zinc-500 focus:border-zinc-700 focus:ring-0"
-    on:change={(e) => updateTagFilter(e.target.value)}
+    on:change={updateTagFilter}
     bind:value={currentTag}
   >
     <option value="">All Tags</option>
