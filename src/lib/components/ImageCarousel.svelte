@@ -2,7 +2,7 @@
   import { fade } from 'svelte/transition';
   import { onMount } from 'svelte';
 
-  export let images: { src: string; alt: string }[] = [];
+  export let images: { srcset: string; alt: string }[] = [];
 
   let activeIndex = 0;
   let intervalId = -1;
