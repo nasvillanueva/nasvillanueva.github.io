@@ -48,15 +48,13 @@
           src="/icon.png"
           alt="nandemonas logo"
         />
-        <span class="w-full overflow-x-hidden transition-[width] ease-in-out max-sm:w-0">
-          <span
-            class="text-nxs-blue transition-colors"
-            class:drop-shadow={transparentMode}
-            class:text-white={transparentMode}>nandemo</span
-          ><span
-            class="text-nxs-red transition-colors"
-            class:text-white={transparentMode}
-            class:drop-shadow={transparentMode}>nas</span
+        <span
+          class="w-full overflow-x-hidden transition-[width] ease-in-out max-sm:w-0"
+          class:drop-shadow={transparentMode}
+        >
+          <span class="text-nxs-blue transition-colors" class:text-white={transparentMode}
+            >nandemo</span
+          ><span class="text-nxs-red transition-colors" class:text-white={transparentMode}>nas</span
           >
         </span>
       </a>
