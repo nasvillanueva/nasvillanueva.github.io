@@ -2,6 +2,8 @@
   import { fade } from 'svelte/transition';
   import { onMount } from 'svelte';
 
+  const IMAGE_CHANGE_INTERVAL = 10000;
+
   export let images: { srcset: string; alt: string }[] = [];
 
   let activeIndex = 0;
@@ -11,8 +13,15 @@
     activeIndex = activeIndex + 1 >= images.length ? 0 : activeIndex + 1;
   };
 
+  const setActiveIndex = (index: number) => {
+    activeIndex = index;
+
+    clearInterval(intervalId);
+    intervalId = setInterval(next, IMAGE_CHANGE_INTERVAL);
+  };
+
   onMount(() => {
-    intervalId = setInterval(next, 10000);
+    intervalId = setInterval(next, IMAGE_CHANGE_INTERVAL);
 
     return () => {
       clearInterval(intervalId);
@@ -40,7 +49,7 @@
     <div class="flex justify-center">
       {#each images as { alt }, index}
         <button
-          on:click={() => (activeIndex = index)}
+          on:click={() => setActiveIndex(index)}
           class="mr-5 h-3 w-3 rounded-full bg-zinc-700 opacity-80 drop-shadow last:mr-0"
           class:bg-zinc-400={activeIndex !== index}
           class:bg-zinc-700={activeIndex === index}
