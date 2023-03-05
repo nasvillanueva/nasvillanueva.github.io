@@ -1,5 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
+  import { swipe } from 'svelte-gestures';
   import { onMount } from 'svelte';
 
   const IMAGE_CHANGE_INTERVAL = 10000;
@@ -9,8 +10,16 @@
   let activeIndex = 0;
   let intervalId = -1;
 
+  const getNextIndex = () => {
+    return activeIndex + 1 >= images.length ? 0 : activeIndex + 1;
+  };
+
+  const getPrevIndex = () => {
+    return activeIndex === 0 ? images.length - 1 : activeIndex - 1;
+  };
+
   const next = () => {
-    activeIndex = activeIndex + 1 >= images.length ? 0 : activeIndex + 1;
+    activeIndex = getNextIndex();
   };
 
   const setActiveIndex = (index: number) => {
@@ -18,6 +27,14 @@
 
     clearInterval(intervalId);
     intervalId = setInterval(next, IMAGE_CHANGE_INTERVAL);
+  };
+
+  const switchImageBySwipe = (
+    event: CustomEvent<{
+      direction: 'right' | 'left';
+    }>
+  ) => {
+    setActiveIndex(event.detail.direction === 'right' ? getPrevIndex() : getNextIndex());
   };
 
   onMount(() => {
@@ -29,7 +46,11 @@
   });
 </script>
 
-<div class="relative aspect-[16/9] w-full max-md:aspect-[4/5]">
+<div
+  class="relative aspect-[16/9] w-full max-md:aspect-[4/5]"
+  use:swipe={{ timeframe: 300, minSwipeDistance: 100, touchAction: 'pan-y' }}
+  on:swipe={switchImageBySwipe}
+>
   {#each images as { srcset, alt }, index (index)}
     {#if index === activeIndex}
       <img
