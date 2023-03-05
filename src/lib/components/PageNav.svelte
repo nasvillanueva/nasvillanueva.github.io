@@ -1,9 +1,13 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import { onMount } from 'svelte';
 
   let scrollY = 0;
-  $: isTopPosition = scrollY === 0;
+  let mounted = false;
 
+  $: isTopPosition = scrollY === 0;
+  $: overlayMode = $page.url.pathname === '/';
+  $: transparentMode = isTopPosition && overlayMode;
   $: navLinks = [
     // {
     //   link: '/photography',
@@ -22,8 +26,9 @@
     // },
   ];
 
-  $: overlayMode = $page.url.pathname === '/';
-  $: transparentMode = isTopPosition && overlayMode;
+  onMount(() => {
+    mounted = true;
+  });
 </script>
 
 <svelte:window bind:scrollY />
@@ -34,6 +39,7 @@
   } ${isTopPosition ? 'shadow-none' : 'shadow-lg shadow-slate-500/5'}`}
 >
   <header
+    class:hidden={!mounted}
     class={`flex justify-between transition-[padding] duration-[450ms] ease-in-out ${
       isTopPosition ? 'p-14 max-md:p-5' : 'px-10 max-md:px-0'
     }`}
