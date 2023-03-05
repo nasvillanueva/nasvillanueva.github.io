@@ -1,6 +1,4 @@
-<footer
-  class="flex items-center justify-between bg-zinc-800 p-14 text-xl text-white max-md:p-5 max-md:text-sm"
->
+<footer class="flex items-center justify-between bg-zinc-800 p-14 text-xl text-white max-md:p-8">
   <div class="links">
     <a href="https://instagram.com/nandemonas" class="custom-link"
       ><i class="fa-brands fa-instagram" /></a
