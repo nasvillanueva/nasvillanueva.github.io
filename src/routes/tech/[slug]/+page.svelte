@@ -3,13 +3,16 @@
   import PageHead from '$lib/components/PageHead.svelte';
   import PostTags from '$lib/components/PostTags.svelte';
   import PostDate from '$lib/components/PostDate.svelte';
+  import PageTitle from '$lib/components/PageTitle.svelte';
 
   $: ({ title, tags, date } = $page.data.frontmatter);
 </script>
 
 <PageHead {title} />
 
-<div class="mb-5">
+<PageTitle title="Tech" />
+
+<div class="mt-5 mb-10">
   <a href="/tech">Back to all Tech</a>
 </div>
 
