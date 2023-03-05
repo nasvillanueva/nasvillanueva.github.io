@@ -9,7 +9,11 @@
 
 <PageHead {title} />
 
-<h1 class="mb-2 text-3xl font-semibold text-nxs-red">{title}</h1>
+<div class="mb-5">
+  <a href="/tech">Back to all Tech</a>
+</div>
+
+<h1 class="mb-2 text-3xl font-semibold text-nxs-blue">{title}</h1>
 <div class="mb-5">
   <PostDate {date} />
   <span class="text-zinc-200">|</span>
