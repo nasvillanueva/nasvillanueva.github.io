@@ -6,7 +6,7 @@ export const load: PageLoad = () => {
     query: {
       quality: 100,
       webp: '',
-      w: '500;900;1200;1600',
+      w: '500;700;1000;1280;1600',
       srcset: '',
     },
     import: 'default',
