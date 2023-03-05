@@ -19,11 +19,11 @@
   ] as const;
 </script>
 
-<footer class="flex items-center justify-between bg-zinc-800 p-14 text-xl text-white max-md:p-8">
+<footer class="flex items-center justify-between bg-zinc-800 p-14 text-white max-md:p-8">
   <div class="links">
     {#each links as { href, iconClass }, index}
       <a {href} class="custom-link hover:text-nxs-red" class:ml-3={index !== 0} aria-label={href}
-        ><i class={`fa-brands ${iconClass}`} /></a
+        ><i class={`fa-brands fa-block fa-xl ${iconClass}`} /></a
       >
     {/each}
   </div>
