@@ -4,7 +4,7 @@
 </script>
 
 <div>
-  <h1 class="mb-5 font-serif text-4xl max-sm:text-2xl font-medium text-zinc-700">
+  <h1 class="mb-5 font-serif text-4xl font-medium text-zinc-700 max-sm:text-2xl">
     {title}
     <slot name="subtitle" />
     {#if subTitle != null && subTitle !== ''}
