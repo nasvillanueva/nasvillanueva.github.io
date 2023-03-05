@@ -4,17 +4,19 @@ import { filenameFromPath } from '../lib/utils/filenameFromPath';
 export const load: PageLoad = () => {
   const carouselImageMetas = import.meta.glob('$lib/assets/carousel/*.jpg', {
     query: {
-      format: 'webp',
       quality: 100,
+      webp: '',
+      w: '500;900;1200;1600',
+      srcset: '',
     },
     import: 'default',
     eager: true,
   });
 
-  const carouselImages = Object.entries(carouselImageMetas).map(([path, src]) => {
+  const carouselImages = Object.entries(carouselImageMetas).map(([path, srcset]) => {
     return {
       alt: filenameFromPath(path),
-      src,
+      srcset,
     };
   });
 

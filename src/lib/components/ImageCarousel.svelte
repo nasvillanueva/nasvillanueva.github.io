@@ -21,10 +21,10 @@
 </script>
 
 <div class="relative aspect-[16/9] w-full max-md:aspect-[4/5]">
-  {#each images as { src, alt }, index (index)}
+  {#each images as { srcset, alt }, index (index)}
     {#if index === activeIndex}
       <img
-        {src}
+        {srcset}
         {alt}
         class="absolute top-0 left-0 aspect-[16/9] w-full object-cover max-md:aspect-[4/5]"
         transition:fade
