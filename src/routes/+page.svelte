@@ -10,8 +10,8 @@
 
 <ImageCarousel {images}>
   <div class="max-md:text-center">
-    <p class="ml-20 font-serif text-2xl font-bold text-white max-md:ml-0">なんでも</p>
-    <p class="ml-20 text-lg font-light text-white max-md:ml-0">
+    <p class="ml-20 font-serif text-2xl font-bold text-white drop-shadow max-md:ml-0">なんでも</p>
+    <p class="ml-20 text-lg font-light text-white drop-shadow max-md:ml-0">
       <span class="italic">nandemo</span> means <span class="italic">anything</span>.
     </p>
   </div>
