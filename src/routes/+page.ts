@@ -24,5 +24,3 @@ export const load: PageLoad = () => {
     carouselImages,
   };
 };
-
-export const prerender = true;
