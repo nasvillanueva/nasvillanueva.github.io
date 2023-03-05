@@ -63,16 +63,16 @@
   />
 </div>
 
-<div class="flex flex-wrap gap-5">
+<div class="flex flex-wrap gap-8">
   {#each imageRows as imageRow}
-    <div class="flex gap-5 max-sm:flex-wrap">
+    <div class="flex gap-8 max-sm:flex-wrap">
       {#each imageRow as { srcset, alt, orientation } (alt)}
         <div class={`${orientation === 'portrait' ? 'aspect-[4/5]' : 'aspect-[16/9]'}`}>
           <img
             {srcset}
             {alt}
             loading="lazy"
-            class={`object-cover shadow-lg ${
+            class={`object-cover shadow-[0_10px_20px_-4px_rgb(0,0,0,0.6)] ${
               orientation === 'portrait' ? 'aspect-[4/5]' : 'aspect-[16/9]'
             }`}
           />
