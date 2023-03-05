@@ -6,8 +6,11 @@
   import PostDate from '$lib/components/PostDate.svelte';
   import PageTitle from '$lib/components/PageTitle.svelte';
   import SelectInput from '$lib/components/SelectInput.svelte';
+  import type { PageData } from './$types';
 
-  let currentTag = $page.data.tag;
+  export let data: PageData;
+
+  let currentTag = data.tag;
 
   const updateQueryParams = (queryParams: URLSearchParams) => {
     void goto(`?${queryParams.toString()}`);
@@ -34,13 +37,13 @@
   <SelectInput
     class="mb-5"
     bind:value={currentTag}
-    options={$page.data.tags}
+    options={data.tags}
     on:change={(e) => updateTagFilter(e.detail)}
     emptyValueLabel="All Tags"
   />
 </div>
 
-{#each $page.data.posts as { slug, title, tags, date } (slug)}
+{#each data.posts as { slug, title, tags, date } (slug)}
   <div class="mb-10">
     <a href={slug} class="mb-2 block text-3xl font-semibold">{title}</a>
     <PostDate {date} />

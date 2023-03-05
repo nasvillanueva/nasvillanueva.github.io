@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import ImageCarousel from '$lib/components/ImageCarousel.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
+  import type { PageData } from './$types';
 
-  $: images = $page.data.carouselImages ?? [];
+  export let data: PageData;
+
+  $: images = data.carouselImages ?? [];
 </script>
 
 <PageHead />

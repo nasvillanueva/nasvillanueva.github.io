@@ -7,10 +7,13 @@
   import type { Image } from '$lib/types/image';
   import { ImageOrientation } from '$lib/types/image';
   import { chunk, interleave } from '$lib/utils/collection';
+  import type { PageData } from './$types';
 
-  let currentCategory = $page.data.category;
+  export let data: PageData;
 
-  const buildImageRows = (images: typeof $page.data.images) => {
+  let currentCategory = data.category;
+
+  const buildImageRows = (images: Image[]) => {
     const imagesByOrientation = images.reduce(
       (acc: Record<ImageOrientation, Image[]>, image: Image) => {
         acc[image.orientation].push(image);
@@ -47,7 +50,7 @@
     updateQueryParams(updatedQueryParams);
   };
 
-  $: imageRows = buildImageRows($page.data.images);
+  $: imageRows = buildImageRows(data.images);
 </script>
 
 <PageHead title="Photography" />
@@ -58,7 +61,7 @@
   <SelectInput
     class="mb-5"
     bind:value={currentCategory}
-    options={$page.data.categories}
+    options={data.categories}
     on:change={(e) => updateCategoryFilter(e.detail)}
     emptyValueLabel="All Categories"
   />

@@ -1,11 +1,13 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import PageHead from '$lib/components/PageHead.svelte';
   import PostTags from '$lib/components/PostTags.svelte';
   import PostDate from '$lib/components/PostDate.svelte';
   import PageTitle from '$lib/components/PageTitle.svelte';
+  import type { PageData } from './$types';
 
-  $: ({ title, tags, date } = $page.data.frontmatter);
+  export let data: PageData;
+
+  $: ({ title, tags, date } = data.frontmatter);
 </script>
 
 <PageHead {title} />
@@ -24,7 +26,7 @@
 </div>
 
 <div class="prose prose-zinc max-w-none max-sm:prose-sm">
-  <svelte:component this={$page.data.component} />
+  <svelte:component this={data.component} />
 </div>
 
 <style lang="scss">
