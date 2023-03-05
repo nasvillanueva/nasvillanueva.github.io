@@ -18,6 +18,8 @@ const config = {
     adapter: adapter({
       fallback: 'index.html',
     }),
+    // Workaround to avoid 404 when refreshing.
+    embedded: true,
   },
 };
 
