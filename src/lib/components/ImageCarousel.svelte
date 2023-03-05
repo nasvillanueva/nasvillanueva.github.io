@@ -38,12 +38,13 @@
 
   <div class="absolute bottom-16 w-full">
     <div class="flex justify-center">
-      {#each images as _, index}
+      {#each images as { alt }, index}
         <button
           on:click={() => (activeIndex = index)}
           class="mr-5 h-3 w-3 rounded-full bg-zinc-700 opacity-80 drop-shadow last:mr-0"
           class:bg-zinc-400={activeIndex !== index}
           class:bg-zinc-700={activeIndex === index}
+          aria-label={alt}
         />
       {/each}
     </div>
