@@ -5,6 +5,7 @@
   import PostTags from '$lib/components/PostTags.svelte';
   import PostDate from '$lib/components/PostDate.svelte';
   import type { ChangeEventHandler } from 'svelte/elements';
+  import PageTitle from '$lib/components/PageTitle.svelte';
 
   let currentTag = $page.url.searchParams.get('tag') ?? '';
 
@@ -34,15 +35,7 @@
 <PageHead title="Tech" />
 
 <div class="mb-10 flex items-center justify-between">
-  <div>
-    <h1 class="mb-5 font-serif text-4xl font-medium text-zinc-700">
-      Tech
-      {#if currentTag !== ''}
-        <span class="text-zinc-500">| {currentTag}</span>
-      {/if}
-    </h1>
-    <div class="w-12 border-b-[2px]" />
-  </div>
+  <PageTitle title="Tech" bind:subTitle={currentTag} />
 
   <select
     class="mt-0 mb-5 border-0 border-b-2 border-zinc-500 text-zinc-500 focus:border-zinc-700 focus:ring-0"
