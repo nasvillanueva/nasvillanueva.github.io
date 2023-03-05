@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
-import { slugFromPath } from '$lib/utils/slugFromPath';
-import { buildFrontmatter } from '../../lib/utils/frontmatter';
+import { slugFromPath } from '$lib/utils/filepath';
+import { buildFrontmatter } from '$lib/utils/frontmatter';
 
 const MAX_POST_PER_PAGE = 10;
 

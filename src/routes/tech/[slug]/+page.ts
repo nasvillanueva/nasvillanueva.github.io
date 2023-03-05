@@ -1,7 +1,7 @@
 import type { PageLoad } from './$types';
-import { slugFromPath } from '$lib/utils/slugFromPath';
+import { slugFromPath } from '$lib/utils/filepath';
 import { error } from '@sveltejs/kit';
-import { buildFrontmatter } from '../../../lib/utils/frontmatter';
+import { buildFrontmatter } from '$lib/utils/frontmatter';
 
 export const load: PageLoad = async ({ params }) => {
   const modules = import.meta.glob(`/src/posts/tech/**/*.{md,svx,svelte.md}`);

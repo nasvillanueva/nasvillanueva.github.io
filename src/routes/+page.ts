@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import { filenameFromPath } from '../lib/utils/filenameFromPath';
+import { filenameFromPath } from '$lib/utils/filepath';
 
 export const load: PageLoad = () => {
   const carouselImageMetas = import.meta.glob('$lib/assets/carousel/*.jpg', {

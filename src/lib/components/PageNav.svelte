@@ -9,11 +9,11 @@
   $: overlayMode = $page.url.pathname === '/';
   $: transparentMode = isTopPosition && overlayMode;
   $: navLinks = [
-    // {
-    //   link: '/photography',
-    //   label: 'Photography',
-    //   active: $page.url.pathname.startsWith('/photography'),
-    // },
+    {
+      link: '/photography',
+      label: 'Photography',
+      active: $page.url.pathname.startsWith('/photography'),
+    },
     {
       link: '/tech',
       label: 'Tech',
