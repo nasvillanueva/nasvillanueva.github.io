@@ -4,8 +4,8 @@
   import PageHead from '$lib/components/PageHead.svelte';
   import PostTags from '$lib/components/PostTags.svelte';
   import PostDate from '$lib/components/PostDate.svelte';
-  import type { ChangeEventHandler } from 'svelte/elements';
   import PageTitle from '$lib/components/PageTitle.svelte';
+  import SelectInput from '$lib/components/SelectInput.svelte';
 
   let currentTag = $page.url.searchParams.get('tag') ?? '';
 
@@ -13,13 +13,7 @@
     void goto(`?${queryParams.toString()}`);
   };
 
-  const updateTagFilter: ChangeEventHandler<HTMLSelectElement> = (event) => {
-    if (event.currentTarget == null) {
-      return;
-    }
-
-    const tag = event.currentTarget.value;
-
+  const updateTagFilter = (tag: string) => {
     const updatedQueryParams = new URLSearchParams($page.url.searchParams.toString());
 
     if (tag === '') {
@@ -37,16 +31,13 @@
 <div class="mb-10 flex items-center justify-between">
   <PageTitle title="Tech" bind:subTitle={currentTag} />
 
-  <select
-    class="mt-0 mb-5 border-0 border-b-2 border-zinc-500 text-zinc-500 focus:border-zinc-700 focus:ring-0"
-    on:change={updateTagFilter}
+  <SelectInput
+    class="mb-5"
     bind:value={currentTag}
-  >
-    <option value="">All Tags</option>
-    {#each $page.data.tags as tag, index (index)}
-      <option value={tag} class="text-inherit">{tag}</option>
-    {/each}
-  </select>
+    options={$page.data.tags}
+    on:change={(e) => updateTagFilter(e.detail)}
+    emptyValueLabel="All Tags"
+  />
 </div>
 
 {#each $page.data.posts as { slug, title, tags, date } (slug)}
