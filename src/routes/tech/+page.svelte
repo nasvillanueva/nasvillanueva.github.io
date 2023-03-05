@@ -7,7 +7,7 @@
   import PageTitle from '$lib/components/PageTitle.svelte';
   import SelectInput from '$lib/components/SelectInput.svelte';
 
-  let currentTag = $page.url.searchParams.get('tag') ?? '';
+  let currentTag = $page.data.tag;
 
   const updateQueryParams = (queryParams: URLSearchParams) => {
     void goto(`?${queryParams.toString()}`);

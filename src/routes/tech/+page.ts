@@ -22,10 +22,9 @@ export const load: PageLoad = async ({ url }) => {
     })
   );
 
+  const tag = url.searchParams.get('tag') ?? '';
   const filteredPosts = (() => {
-    const tag = url.searchParams.get('tag');
-
-    if (tag == null || tag === '') {
+    if (tag === '') {
       return posts;
     } else {
       return posts.filter((post) => {
@@ -47,6 +46,7 @@ export const load: PageLoad = async ({ url }) => {
 
   return {
     posts: paginatedPosts,
+    tag,
     tags,
     page,
     totalPostsCount: posts.length,
