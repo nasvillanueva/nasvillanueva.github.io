@@ -12,6 +12,7 @@
     // This is here only for editor hints, but as written below,
     // paths aliases are handled in svelte.config.js
     "paths": {
+      "$lib": ["./src/lib"],
       "$lib/*": ["./src/lib/*"]
     }
   }

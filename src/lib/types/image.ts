@@ -3,3 +3,9 @@ export enum ImageOrientation {
   PORTRAIT = 'portrait',
   SQUARE = 'square',
 }
+
+export interface Image {
+  srcset: string;
+  alt: string;
+  orientation: ImageOrientation;
+}

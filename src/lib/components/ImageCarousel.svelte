@@ -31,7 +31,8 @@
 
   const switchImageBySwipe = (
     event: CustomEvent<{
-      direction: 'right' | 'left';
+      direction: 'top' | 'bottom' | 'right' | 'left';
+      target: EventTarget;
     }>
   ) => {
     setActiveIndex(event.detail.direction === 'right' ? getPrevIndex() : getNextIndex());

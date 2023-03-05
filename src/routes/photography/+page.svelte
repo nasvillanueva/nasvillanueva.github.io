@@ -4,14 +4,15 @@
   import { page } from '$app/stores';
   import SelectInput from '$lib/components/SelectInput.svelte';
   import { goto } from '$app/navigation';
-  import { ImageOrientation } from '$lib/assets/types/image';
+  import type { Image } from '$lib/types/image';
+  import { ImageOrientation } from '$lib/types/image';
   import { chunk, interleave } from '$lib/utils/collection';
 
   let currentCategory = $page.data.category;
 
   const buildImageRows = (images: typeof $page.data.images) => {
     const imagesByOrientation = images.reduce(
-      (acc, image) => {
+      (acc: Record<ImageOrientation, Image[]>, image: Image) => {
         acc[image.orientation].push(image);
 
         return acc;

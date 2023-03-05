@@ -1,8 +1,10 @@
 import type { PageLoad } from './$types';
 import { filenameFromPath } from '$lib/utils/filepath';
+import type { Image } from '$lib/types/image';
+import { ImageOrientation } from '$lib/types/image';
 
 export const load: PageLoad = () => {
-  const carouselImageMetas = import.meta.glob('$lib/assets/carousel/*.jpg', {
+  const carouselImageMetas = import.meta.glob<true, string, string>('$lib/assets/carousel/*.jpg', {
     query: {
       quality: 100,
       webp: '',
@@ -13,10 +15,11 @@ export const load: PageLoad = () => {
     eager: true,
   });
 
-  const carouselImages = Object.entries(carouselImageMetas).map(([path, srcset]) => {
+  const carouselImages: Image[] = Object.entries(carouselImageMetas).map(([path, srcset]) => {
     return {
-      alt: filenameFromPath(path),
+      alt: filenameFromPath(path) as string,
       srcset,
+      orientation: ImageOrientation.LANDSCAPE,
     };
   });
 
