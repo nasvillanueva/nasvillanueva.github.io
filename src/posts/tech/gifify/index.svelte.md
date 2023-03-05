@@ -75,7 +75,7 @@ This will produce a GIF file with the same filename as the input.
 
 Here's a screencast I recorded using Quicktime. `sample.mov`
 
-<video width="100%" height="auto" controls>
+<video width="100%" height="auto" controls muted>
     <source src={sampleMov}>
     Your browser does not support the video tag.
 </video>
