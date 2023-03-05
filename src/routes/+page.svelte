@@ -1,9 +1,12 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import ImageCarousel from '$lib/components/ImageCarousel.svelte';
+  import PageHead from '$lib/components/PageHead.svelte';
 
   $: images = $page.data.carouselImages ?? [];
 </script>
+
+<PageHead />
 
 <ImageCarousel {images}>
   <div class="max-md:text-center">
